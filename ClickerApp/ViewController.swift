@@ -10,6 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     var total = 0
     var multiply = 1
+    var two = true
+    var five = true
+    var twenty = true
+    
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var labelOutlet: UILabel!
     override func viewDidLoad() {
@@ -32,6 +36,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let nvc = segue.destination as! StoreViewController
         nvc.points = total
+        nvc.two = two
+        nvc.five = five
+        nvc.twenty = twenty
         nvc.delegate = self
     }
     

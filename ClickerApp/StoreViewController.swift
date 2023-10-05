@@ -10,9 +10,9 @@ import UIKit
 class StoreViewController: UIViewController {
     var points = 0
     var delegate : ViewController!
-    var two: Bool
-    var five: Bool
-    var twenty: Bool
+    var two = true
+    var five = true
+    var twenty = true
     
     @IBOutlet weak var twentyOutlet: UIButton!
     @IBOutlet weak var fiveOutlet: UIButton!
@@ -57,7 +57,8 @@ if two
             delegate.multiply = 2
             twoOutlet.isEnabled = false
             delegate.labelOutlet.text = "\(delegate.total)"
-            two = false
+            delegate.two = false
+            five = false
         }
     }
     
@@ -72,6 +73,7 @@ if two
             delegate.multiply = 5
             fiveOutlet.isEnabled = false
             delegate.labelOutlet.text = "\(delegate.total)"
+            delegate.five = false
             five = false
         }
         
@@ -88,6 +90,7 @@ if two
             delegate.multiply = 20
             twentyOutlet.isEnabled = false
             delegate.labelOutlet.text = "\(delegate.total)"
+            delegate.twenty = false
             twenty = false
         }
         
